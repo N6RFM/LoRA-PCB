@@ -7,4 +7,6 @@ These modules may be controlled using Arduino or ESP32 microcontrollers, among o
 
 Unfortunately, the pin spacing on these devices is not the standard breadboard pitch (2.54mm)  different between suppliers,and quite small.  So far only Dorji offers breakout boards, and custom PCBs are often required to build a transceiver.
 
-The nominal output of the devices mentioned above is +22 dBm.  However, some manufacturers are now providing Semtech sx126x based transceivers with built in power amplifiers rasing the output to ~ 30dBm.  The purpose of this repo is to describe the design of a simple PCB for the GNiceRF 1268F30 1.5W module (https://www.nicerf.com/product_193_312.html).  This chip has an SPI interface tom allow for interfacing with SPI based microcontrollers.  
+The nominal output of the devices mentioned above is +22 dBm.  However, some manufacturers are now providing Semtech sx126x based transceivers with built in power amplifiers rasing the output to ~ 30dBm.  The purpose of this repo is to describe the design of a simple PCB for the GNiceRF 1268F30 1.5W module (https://www.nicerf.com/product_193_312.html).  This chip has an SPI interface to allow for interfacing with SPI based microcontrollers.
+
+
