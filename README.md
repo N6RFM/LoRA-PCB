@@ -10,4 +10,4 @@ Unfortunately, the pin spacing on these devices is not the standard breadboard p
 The nominal output of the devices mentioned above is +22 dBm.  However, some manufacturers are now providing Semtech sx126x based transceivers with built in power amplifiers rasing the output to ~ 30dBm.  The purpose of this repo is to describe the design of a simple PCB for the GNiceRF 1268F30 1.5W module (https://www.nicerf.com/product_193_312.html).  This chip has an SPI interface to allow for interfacing with SPI based microcontrollers.
 
 
-https://github.com/N6RFM/LoRA-PCB/blob/master/pix/PCBv1.2.png
+![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/PCBv1.2.png)
