@@ -23,7 +23,7 @@ Considering the very intermittent duty cycle for Fossasat applications, the 5V p
 
 Pin definition for the Nano interface below.  Be sure to update any Arduino sketches accordingly
 | CHIP | Nano GPIO |
-
+| ---- | ----|
 | DIO1 | DO2 |
 | BUSY | D09 |
 | NSS  | D10 |
