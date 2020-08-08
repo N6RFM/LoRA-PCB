@@ -27,13 +27,31 @@ Pin definition for the Nano interface below.  Be sure to update any Arduino sket
 | DIO1 | DO2 |
 | BUSY | D09 |
 | NSS  | D10 |
+| MOSI | D111 |
 | MISO | D12 |
-| MOSI | D11 |
 | SCK  | D13 |
 | GND  | GND |
 | VCC  | 5V  |
 
-
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4483.png)
+
+Pin definition for the ESP32 interface below.  Be sure to update any Arduino sketches accordingly
+| CHIP | ESP32 GPIO |
+| ---- | ----|
+| OLED VCC | 3.3V |
+| BUSY | P26 |
+| DI01  | P27 |
+| RESET* | P14 |
+| VCC | 5V |
+| GND  | OLED GND, 1268F30 GND |
+| MOSI | P23 |
+| OLED SCL | P22 |
+| OLED SCA | P21 |
+| MISO | P19 |
+| SCK | P18 |
+| NSS | P5 |
+| GND  | GND |
+| 1268F30 VCC  | 5V  |
+
 
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4444.png)
