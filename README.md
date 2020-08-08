@@ -33,5 +33,6 @@ Lora_MOSI	D11
 Lora_SCK  D13
 GND       GND
 VCC       5V
+![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4483.png)
 
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4444.png)
