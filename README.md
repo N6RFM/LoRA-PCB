@@ -23,19 +23,17 @@ Considering the very intermittent duty cycle for Fossasat applications, the 5V p
 
 Pin definition for the Nano interface below.  Be sure to update any Arduino sketches accordingly
 | CHIP | Nano GPIO |
-| --- | --- |
+
+| DIO1 | DO2 |
+| BUSY | D09 |
+| NSS  | D10 |
+| MISO | D12 |
+| MOSI | D11 |
+| SCK  | D13 |
+| GND  | GND |
+| VCC  | 5V  |
 
 
-| Lora_NSS	| D10 |
-
-
-Lora_DI01	D02
-Lora_BUSY	D09
-Lora_MISO	D12
-Lora_MOSI	D11
-Lora_SCK  D13
-GND       GND
-VCC       5V
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4483.png)
 
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4444.png)
