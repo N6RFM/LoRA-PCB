@@ -34,4 +34,4 @@ Lora_SCK  D13
 GND       GND
 VCC       5V
 
-
+![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG4444.jpg)
