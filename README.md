@@ -22,10 +22,13 @@ Connections to the Arduino nano
 Considering the very intermittent duty cycle for Fossasat applications, the 5V pin on the Nano (which passes 5V from the computer USB port) seems quite adequate to drive the PA in the 1268F30. When using a Nano, D1 and R3 may be bypassed.  In some Nano builds, I have included D1 using a low voltage drop device (1N5819 Schottkey) and jumpered R3.
 
 Pin definition for the Nano interface below.  Be sure to update any Arduino sketches accordingly
+| CHIP | Nano GPIO |
+| --- | --- |
 
+| `git diff` | Show file differences that **haven't been** staged |
 CHIP      GPIO
 
-Lora_NSS	D10
+|Lora_NSS	|D10|
 Lora_DI01	D02
 Lora_BUSY	D09
 Lora_MISO	D12
