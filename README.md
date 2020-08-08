@@ -25,10 +25,10 @@ Pin definition for the Nano interface below.  Be sure to update any Arduino sket
 | CHIP | Nano GPIO |
 | --- | --- |
 
-| `git diff` | Show file differences that **haven't been** staged |
-CHIP      GPIO
 
-|Lora_NSS	|D10|
+| Lora_NSS	| D10 |
+
+
 Lora_DI01	D02
 Lora_BUSY	D09
 Lora_MISO	D12
