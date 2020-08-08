@@ -13,7 +13,7 @@ The nominal output of the modules mentioned above is ~22 dBm.  However, some man
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/PCBv1.2.png)
 
 By using heades with 2.54mm spacingm, this PCB piggybacks onto a standard PCB which in turn may also be populated with an Arduino nano, or ESP32 based controller.
-The GNiceRF 1268F30 requires a 5V supply and sources ~600mA during the TX cycle.  
+The GNiceRF 1268F30 requires a 5V supply and sources ~600mA during the TX cycle. Ground traces shown in blue.  Note - the antenna ground remains isolated, per manufacturer's instructions. 
 
 For those applications where provision of external DC power is desired, then the PCB incudes provision for a simple current limiting resistor (R1) or a voltage divider (R1, R2).  As noted above, given that the current consumption during the TX cycle is ~ 600mA R1 alone (or bypassed) may suit. Pads for a standard 7805 regulator are included if an external DC supply is used.  In this case, the 5V supply line from the controller must also be enabled otherwise the 1269F30 will return an error code. The PCB also includes pads for filtering capaitors, if desired.  Further information on these may be found in the 7805 datasheet or application notes. 
 
