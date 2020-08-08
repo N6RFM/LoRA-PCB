@@ -1,4 +1,4 @@
-# High power LoRa Transceiver for Fossasats.  A simple PCB for the GNice 1268F30 Module.
+# 30 dBm output LoRa Transceiver for Fossasats.  A simple PCB for the GNice 1268F30 Module.
 The FossaSat cubesats (www.fossa.systems) are intended to provide free and open source IoT communications using relatively inexpensive LoRa modules.  These include the Semtech sx126x and sx127x series devices.  Such devices are offered by a variety of suppliers including GNice RF https://www.nicerf.com/ and Dorji http://dorji.com/.  
 
 For use in the amateur 70cm frequency range, examples include the LORA1268-160mW (https://www.nicerf.com/product_193_308.html) and the Dorji DRF1268T (http://dorji.com/products-detail.php?ProId=64) chips.  
