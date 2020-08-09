@@ -17,6 +17,11 @@ By using headers with 2.54mm spacing, this PCB piggybacks onto a standard PCB wh
 
 For those applications where provision of external DC power is desired, the PCB incudes provision for a simple current limiting resistor (R1) or a voltage divider (R1, R2).  As noted above, given that the current consumption during the TX cycle is ~ 600mA R1 alone (or bypassed) may suit. Pads for a standard 7805 regulator are included if an external DC supply of higher voltage is used.  In this case, the 5V supply line from the controller must also be connected otherwise the 1269F30 will return an error code. The PCB also includes pads for filtering capacitors, if desired.  Further information on these may be found in the 7805 datasheet or application notes. 
 
+The appaorch I use is to mount the daughter board and the controller on a pre-sized PCB and solder tack several of the unused header pins to hold things in place.  The headers serve as standoffs.  Make sure everything is lined up before tacking the unused pins down.  Then, I use 30AWG wire wrapping for the connections.  Once the microcintroller is flashed and performance verified, then I apply a touch of solder on the wirewrap connections.  Builders choice as to do this last step or not! 
+
+Example wire wrapping of connections.
+![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4491.png)
+
 **Connections to the Arduino nano**
 
 Considering the very intermittent duty cycle for Fossasat applications, the 5V pin on the Nano (which passes 5V from the computer USB port) seems quite adequate in my installation to drive the PA in the 1268F30. In my Nano builds, I have included D1 using a low voltage drop device (1N5819 Schottkey) and jumpered R3.
