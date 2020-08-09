@@ -3,30 +3,31 @@
 
 The Internet of things (IoT, e.g., wireless sensor networks, "smart home" devices") provides a means to transfer data over a network. Low-Power Wide Area Networks (LPWANs) are wireless. Compared to WiFi and Bluetooth, LPWANs are well suited for applications involving low-power sensors sending small amounts of data over long distances. Currently, a very popular IoT communication technology is LoRa (Long Range).  LoRA is a low-power wide-area network protocol based on spread spectrum modulation techniques. It was developed by Cycleo of Grenoble, France and subsequently acquired by Semtech. Unfortunately, Semtech has not disclosed the physical layer specifications. Since LoRa is not open source, there has been some debate as to whether or not LoRa has a place in the Amateur Radio spectrum utilization.  Nevertheless, LoRa has achieved some impressive communication distance records, albeit at low data rates. Thus, the transmission of relatively small amounts of satellite telemetry make the LoRa protocal an obvious choice.
 
-The FossaSat cubesats (www.fossa.systems) transmit in the 70cm Amateur radio satellite sub-band and are intended to provide free and open source IoT communications using relatively inexpensive LoRa modules.  LoRa modules may be obtained from Semtech, one of its authorized partners or licensees and incorporate the Semtech sx126x and sx127x series chips. The nominal output of the Semtech chips is ~22 dBm.  For use in the amateur 70cm frequency range, examples include the LORA1268-160mW (https://www.nicerf.com/product_193_308.html) and the Dorji DRF1268T (http://dorji.com/products-detail.php?ProId=64) chips.  
+The FossaSat cubesats (www.fossa.systems) transmit in the 70cm Amateur radio satellite sub-band using relatively inexpensive LoRa modules.  LoRa modules may be obtained from Semtech, one of its authorized partners or licensees and incorporate the Semtech sx126x and sx127x series chips. The nominal output of the Semtech chips is ~22 dBm.  For use in the amateur 70cm frequency range, examples include the LORA1268-160mW (https://www.nicerf.com/product_193_308.html) and the Dorji DRF1268T (http://dorji.com/products-detail.php?ProId=64) chips.  
 
-These modules have an SPI interface and may be controlled using Arduino or ESP32 microcontrollers, among others.  Examples of operational setups may be found here https://github.com/FOSSASystems and here https://github.com/G4lile0/ESP32-OLED-Fossa-GroundStation/wiki/Arduino-IDE.  The latter software is more sophisticated, incorporates an OLED display, and connects to the Telegram application for data sharing and messaging among users.
+These modules have an SPI interface and may be controlled using Arduino or ESP32 microcontrollers, among others.  Examples of operational setups may be found here https://github.com/FOSSASystems and here https://github.com/G4lile0/ESP32-OLED-Fossa-GroundStation/wiki/Arduino-IDE.  The latter software is more sophisticated, incorporates an OLED display, and connects to the Telegram application for data sharing and messaging among users.  These sketches rely on RadioLib https://github.com/jgromes/RadioLib which allows its users to integrate different wireless communication modules, protocols and digital modes into a single consistent system. 
 
-Unfortunately, the pin spacing on the LoRa modules described above is typically not the standard breadboard pitch (2.54mm), often differs between suppliers, and incorporates quite small spacing.  While some have been successful performing micro-wiring, custom PCBs are often required to more conveniently build a transceiver.  Some manufacturers are now providing Semtech sx126x based transceivers with built in power amplifiers rasing the output to ~30dBm.   
+Unfortunately, the pin spacing on the LoRa modules described above is typically not the standard breadboard pitch (2.54mm), often differs between suppliers, and incorporates quite small spacing.  While some have been successful performing micro-wiring, custom PCBs are more convenient to build a transceiver.  On-line tools are available for PCB design and small scale production of simple PCBs (e.g., 2 layer) can be inexpensive.  
 
-The purpose of this repo is to describe the design of a simple PCB for the GNiceRF 1268F30 1.5W module (+30 dBm) (https://www.nicerf.com/product_193_312.html) and interfacing it with several SPI based microcontrollers.  The design files (prepared using EasyEDA) and BOM are included.  
+Manufacturers are now providing Semtech sx126x based transceivers with built in power amplifiers rasing the output to ~30dBm.  The purpose of this repo is to document the design of a simple PCB for the GNiceRF 1268F30 1.5W module (+30 dBm) (https://www.nicerf.com/product_193_312.html) and how to interface it with several SPI based microcontrollers.  Thgis device incudes a simple XO only, so TCXO voltage must be set to 0 in the microcontroller sketch.  The design files (prepared using EasyEDA) and BOM are included in the repo. 
 
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/PCBv1.2.png)
 
-By using headers with 2.54mm spacing, this PCB piggybacks onto a standard PCB which in turn may also be populated with an SPI controller such as an Arduino nano or ESP32 based controller.  The GNiceRF 1268F30 requires a 5V supply and sources ~600mA during the TX cycle. Ground traces shown in blue.  Note - the antenna ground remains isolated, per the GNice RF datasheet. 
+By using standard headers with 2.54mm spacing, this PCB piggybacks onto a standard PCB which in turn may also be populated with an SPI controller such as an Arduino Nano or ESP32 based controller.  Ground traces shown in blue.  Note - the antenna ground remains isolated, per the GNice RF datasheet. 
 
-For those applications where provision of external DC power is desired, the PCB incudes provision for a simple current limiting resistor (R1) or a voltage divider (R1, R2).  As noted above, given that the current consumption during the TX cycle is ~ 600mA R1 alone (or bypassed) may suit. Pads for a standard 7805 regulator are included if an external DC supply of higher voltage is used.  In this case, the 5V supply line from the controller must also be connected otherwise the 1269F30 will return an error code. The PCB also includes pads for filtering capacitors, if desired.  Further information on these may be found in the 7805 datasheet or application notes. 
+The GNiceRF 1268F30 requires a 5V DC supply and sources ~600mA during the TX cycle. For those applications where provision of external DC power is desired, the PCB incudes provision for a simple current limiting resistor (R1) or a voltage divider (R1, R2) upstream of a 5V regulator.  As noted above, given that the current consumption during the TX cycle is ~ 600mA R1 alone (or bypassed) may suit and a voltage divider not required. Pads for a standard 7805 regulator are included if an external DC supply of higher voltage is used.  Evenh if an external power input is used, the 5V supply line from the controller must also be connected otherwise the 1269F30 will return an error code. The PCB also includes pads for filtering capacitors, if desired.  Further information on these may be found in the 7805 datasheet or application notes. 
 
-The appaorch I use is to mount the daughter board and the controller on a pre-sized PCB and solder tack several of the unused header pins to hold things in place.  The headers serve as standoffs.  Make sure everything is lined up before tacking the unused pins down.  Then, I use 30AWG wire wrapping for the connections.  Once the microcintroller is flashed and performance verified, then I apply a touch of solder on the wirewrap connections.  Builders choice as to do this last step or not! 
+The build approach I use is to mount the daughter board and the controller on a pre-sized PCB and solder tack several of the unused header pins to hold things in place.  The headers serve as standoffs.  Make sure everything is lined up before tacking the unused pins down.  Then, I use 30AWG wire wrapping for the connections.  Once the microcintroller is flashed and performance verified, then I apply a touch of solder on the wirewrap connections.  Builders choice as to do this last step or not! 
 
 Example wire wrapping of connections.
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4491.PNG)
 
 **Connections to the Arduino nano**
 
-Considering the very intermittent duty cycle for Fossasat applications, the 5V pin on the Nano (which passes 5V from the computer USB port) seems quite adequate in my installation to drive the PA in the 1268F30. In my Nano builds, I have included D1 using a low voltage drop device (1N5819 Schottkey) and jumpered R3.
+Considering the very intermittent duty cycle for Fossasat applications, the 5V pin on the Nano (which passes 5V from the computer USB port) seems quite adequate in my installation to drive the PA in the 1268F30. In my Nano builds, I have included D1 using a low voltage drop device (1N5819 Schottkey), jumpered R3.  the rest of the PCB components are not required.  
 
-Pin definition for the Nano interface below.  Be sure to update any Arduino sketches accordingly!
+Pin definition for the Nano interface below.  Be sure to update any Arduino sketches accordingly!  These should also work for the Uno.
+
 | CHIP | Nano GPIO |
 | ---- | ----|
 | DIO1 | DO2 |
@@ -41,6 +42,8 @@ Pin definition for the Nano interface below.  Be sure to update any Arduino sket
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4483.png)
 
 **Connections to the ESP32 WROOM device with an OLED display**
+
+In the case of the ESP32 WROOM, OLED design I have used the external power input, R1 (10 ohms), R2 absent, the the 7805 and filtering capacitors, D1(1N5819) and RX (33 ohms).  The 5V pin from the ESP32 is connected to the 5V input on the lower right corner.  A single header pin offers a convenient wire wrap connection point.  This is also the case for the ground conenction between the devices.  It may be that the ESP32 circuit works without an external DC supply by bypassing D1 and R3, but I have not tried this.
 
 Pin definition for the ESP32 interface below.  Be sure to update any Arduino or Platformio sketches accordingly!
 | CHIP | ESP32 GPIO |
@@ -60,5 +63,15 @@ Pin definition for the ESP32 interface below.  Be sure to update any Arduino or 
 | GND  | GND |
 | 1268F30 VCC  | 5V  |
 
-
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4444.png)
+
+If an error code is returned during startup, RadioLib offers a list of reasons https://jgromes.github.io/RadioLib/group__status__codes.html. 
+From my experience
+| Code | Reason |
+| ---- | ----|
+| -2 | check board wiring |
+| -5 | check external input voltage present if using ESP32 |
+| -20 | unplug, repugin USB cable |
+| -707  | verify that TCXO is set to 0 volts |
+
+Have fun!  Hope to see you on Fossasat!
