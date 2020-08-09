@@ -19,7 +19,7 @@ For those applications where provision of external DC power is desired, the PCB 
 
 **Connections to the Arduino nano**
 
-Considering the very intermittent duty cycle for Fossasat applications, the 5V pin on the Nano (which passes 5V from the computer USB port) seems quite adequate in my installation to drive the PA in the 1268F30. So when using a Nano, D1 and R3 may be bypassed.  In some Nano builds, I have included D1 using a low voltage drop device (1N5819 Schottkey) and jumpered R3.
+Considering the very intermittent duty cycle for Fossasat applications, the 5V pin on the Nano (which passes 5V from the computer USB port) seems quite adequate in my installation to drive the PA in the 1268F30. In my Nano builds, I have included D1 using a low voltage drop device (1N5819 Schottkey) and jumpered R3.
 
 Pin definition for the Nano interface below.  Be sure to update any Arduino sketches accordingly!
 | CHIP | Nano GPIO |
