@@ -71,7 +71,7 @@ From my experience
 | ---- | ----|
 | -2 | check board wiring |
 | -5 | check external input voltage present if using ESP32 |
-| -20 | unplug, repugin USB cable |
+| -20 | unplug, re-plugin USB cable |
 | -707  | verify that TCXO is set to 0 volts |
 
 Have fun!  Hope to see you on Fossasat!
