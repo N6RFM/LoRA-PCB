@@ -20,7 +20,7 @@ For those applications where provision of external DC power is desired, the PCB 
 The appaorch I use is to mount the daughter board and the controller on a pre-sized PCB and solder tack several of the unused header pins to hold things in place.  The headers serve as standoffs.  Make sure everything is lined up before tacking the unused pins down.  Then, I use 30AWG wire wrapping for the connections.  Once the microcintroller is flashed and performance verified, then I apply a touch of solder on the wirewrap connections.  Builders choice as to do this last step or not! 
 
 Example wire wrapping of connections.
-![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4491.png)
+![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4491.PNG)
 
 **Connections to the Arduino nano**
 
