@@ -77,6 +77,6 @@ From my experience
 | -20 | unplug, re-plugin USB cable |
 | -707  | verify that TCXO is set to 0 volts |
 
-To insulate the bottom of the boards, they are placed atop 3D printed trays with 7mm high walls.  The blue tape in the picture above is how the PCB is held in place. 
+To insulate and protect the bottom of the boards, they are placed atop 3D printed PLA trays with 7mm high walls.  The blue tape in one of the pictures above is how the PCB is held in place.  The tray is beneath the PCB and not seen in the picture. 
 
 Have fun!  Hope to see you on Fossasat!
