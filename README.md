@@ -64,7 +64,7 @@ Pin definition for the ESP32 interface below.  Be sure to update any Arduino or 
 | GND  | GND |
 | 1268F30 VCC  | 5V  |
 
-RESET* is not explicity used and handled in the RadioLib software. This hardwried connection may not be needed, but I have included it and it does not seem to cause a problem.
+RESET* handled in the RadioLib software. A hardwired connection may not be needed, but I have included it  in the ESP32 build and it does not seem to cause a problem.
 
 ![alt text](https://github.com/N6RFM/LoRA-PCB/blob/master/pix/IMG_4444.png)
 
